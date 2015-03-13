@@ -4,12 +4,12 @@
 server = http.createServer(express().use(express.static(__dirname)))
 
 sio.listen(server).sockets.on('connection', (socket)->
-	term = pty.spawn 'bash', [], {name: 'xterm-color', cwd: process.env.HOME}
-	.on 'data', (data) -> socket.emit('data', data)
+	term = pty.spawn 'bash', [], {cwd: process.env.HOME}
+	.on 'data', (data)-> socket.emit('data', data)
 	.on 'exit', -> socket.emit('exit', {})
 
-	socket.on 'data', (data) -> term.write data
-	.on 'resize', (data)->term.resize(data.cols, data.rows)
+	socket.on 'data', (data)-> term.write data
+	.on 'resize', (data)-> term.resize(data.cols, data.rows)
 	.on 'disconnect', -> term.destroy()
 )
 
