@@ -4,7 +4,7 @@
 server = http.createServer(express().use(express.static(__dirname)))
 
 sio.listen(server).sockets.on('connection', (socket)->
-	term = pty.spawn 'bash', [], {cwd: process.env.HOME}
+	term = pty.spawn 'bash', [], {name: 'xterm-color', cwd: process.env.HOME}
 	.on 'data', (data) -> socket.emit('data', data)
 	.on 'exit', -> socket.emit('exit', {})
 
