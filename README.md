@@ -4,7 +4,7 @@ A web-based terminal for docker container.
 
 ### Demo
 
-    http://docker-web-terminal.coding.io
+[http://docker-web-terminal.coding.io](http://docker-web-terminal.coding.io)
 
 ### Run outside of docker
 
@@ -24,7 +24,7 @@ A web-based terminal for docker container.
 
 ### Author
 
-Vangie Du from Coding IDE Team <duwan@coding.net>  http://codelife.me
+Vangie Du from Coding IDE Team <duwan@coding.net>  [http://codelife.me](http://codelife.me)
 
 ### License
 
