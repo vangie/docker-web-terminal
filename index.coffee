@@ -1,5 +1,5 @@
 [pty, sio, express, http] = (require lib for lib in ['pty.js', 'socket.io', 'express', 'http'])
-[host, port] = ["0.0.0.0", 5000]
+[host, port] = ["0.0.0.0", process.env.PORT or 5000]
 
 server = http.createServer(express().use(express.static(__dirname)))
 
