@@ -1,0 +1,21 @@
+{
+  "name": "docker-web-terminal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://coding.net/duwan/docker-web-terminal.git"
+  },
+  "keywords": [
+    "docker",
+    "terminal",
+    "tty",
+    "web-terminal"
+  ],
+  "author": "Vangie Du <duwan@live.com> (http://codelife.me)",
+  "license": "ISC"
+}
