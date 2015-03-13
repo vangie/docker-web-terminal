@@ -21,6 +21,8 @@
   "license": "ISC",
   "dependencies": {
     "coffee-script": "^1.9.1",
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "pty.js": "^0.2.6",
+    "socket.io": "^1.3.5"
   }
 }
