@@ -1,0 +1,22 @@
+{
+  "name": "docker-web-terminal",
+  "version": "1.0.0",
+  "authors": [
+    "Vangie Du <duwan@live.com>"
+  ],
+  "description": "A web-based terminal for docker container",
+  "keywords": [
+    "web-terminal",
+    "terminal"
+  ],
+  "license": "MIT",
+  "homepage": "https://coding.net/u/duwan/p/docker-web-terminal",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

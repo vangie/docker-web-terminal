@@ -1,9 +1,10 @@
 {
   "name": "docker-web-terminal",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A web-based terminal for docker container",
+  "main": "index.coffee",
   "scripts": {
+    "start": "coffee index.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +18,9 @@
     "web-terminal"
   ],
   "author": "Vangie Du <duwan@live.com> (http://codelife.me)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "coffee-script": "^1.9.1",
+    "express": "^4.12.2"
+  }
 }

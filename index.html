@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Docker Web Terminal</title>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/sh.js/build/sh.js"></script>
+        <script src="bower_components/socket.io-client/socket.io.js"></script>
+        <script src="bower_components/coffeescript/extras/coffee-script.js"></script>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id="terminal"></div>
+        <script type="text/coffeescript">
+            term = new Terminal()
+            term.on("data", (data)-> socket.emit('data', data))
+            term.open($("#terminal")[0])
+
+            socket = io.connect("#{location.protocol}//#{location.hostname}:5000")
+            .on("data", (data)-> term.write(data))
+
+            $(window).resize(->
+                term.sizeToFit()
+                socket.emit('resize', ->
+                    cols: term.cols,
+                    rows: term.rows
+                )
+            )
+            $ -> $(window).trigger('resize')
+        </script>
+    </body>
+</html>
