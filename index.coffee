@@ -13,4 +13,4 @@ sio.listen(server).sockets.on('connection', (socket)->
 	.on 'disconnect', -> term.destroy()
 )
 
-server.listen port, host, -> console.log("Server Listening on %s:%d", host, port)
+server.listen port, host, -> console.log('Server Listening on %s:%d', host, port)
