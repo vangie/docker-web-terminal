@@ -8,9 +8,9 @@ sio.listen(server).sockets.on('connection', (socket)->
 	.on 'data', (data)-> socket.emit('data', data)
 	.on 'exit', -> socket.emit('exit', {})
 
-	socket.on 'data', (data)-> term.write data
+	socket.on 'data', (data)-> term.write data 
 	.on 'resize', (data)-> term.resize(data.cols, data.rows)
-	.on 'disconnect', -> term.destroy()
+	.on 'disconnect', -> term.destroy() 
 )
 
 server.listen port, host, -> console.log('Server Listening on %s:%d', host, port)

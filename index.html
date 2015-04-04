@@ -13,18 +13,18 @@
             term = new Terminal()
             term.on('data', (data)-> socket.emit('data', data))
             term.open($('#terminal')[0])
-            
-            socket = io.connect("#{location.protocol}//#{location.hostname}:#{location.port}")
+            term.on('resize',->
+                socket.emit('resize', {
+                    cols: term.cols,
+                    rows: term.rows 
+                })
+            )
+            {protocol, hostname, port} = location
+            socket = io.connect("#{protocol}//#{hostname}:#{port}")
             .on('data', (data)-> term.write(data))
 
-            $(window).resize(->
-                term.sizeToFit()
-                socket.emit('resize', ->
-                    cols: term.cols,
-                    rows: term.rows
-                )
-            )
-            $ -> $(window).trigger('resize')
+            $(window).resize -> term.sizeToFit()
+            $(window).load -> term.sizeToFit()
         </script>
     </body>
 </html>
